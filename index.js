@@ -13,8 +13,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // Import routes
+const blazesRoute = require("./routes/blazes.route");
+const caravansRoute = require("./routes/caravans.route");
+const memoriesRoute = require("./routes/memories.route");
+const dashboardRoute = require("./routes/dashboard.route");
+const tripsRoute = require("./routes/trips.route");
+const nomadsRoute = require("./routes/nomads.route");
 
 // Routes
+app.use("/api/blazes", blazesRoute);
+app.use("/api/caravans", caravansRoute);
+app.use("/api/memories", memoriesRoute);
+app.use("/api/dashboard", dashboardRoute);
+app.use("/api/trips", tripsRoute);
+app.use("/api/nomads", nomadsRoute);
 
 /** Unauthorized error handler */
 app.use(function (err, req, res, next) {
