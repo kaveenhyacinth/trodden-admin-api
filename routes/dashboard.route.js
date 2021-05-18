@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const {
-  getAllBlazesController,
-  deleteBlazeByIdController,
-} = require("../controllers/blazes.controller");
+  getTotalsController,
+  deleteCaravanByIdController,
+} = require("../controllers/dashboard.controller");
 
-router.get("/all", getAllBlazesController);
-router.delete("/:id", deleteBlazeByIdController);
+router.get("/all", getTotalsController);
+router.delete("/:id", deleteCaravanByIdController);
 
 module.exports = router;
